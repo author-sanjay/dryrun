@@ -2,8 +2,6 @@ import { Avatar, Grid } from "@material-ui/core";
 import React from "react";
 
 const Home = () => {
-    
-      
   return (
     <section id="home" className="flex flex-row py-6">
       <section id="profile" className="flex-0.3 flex justify-center w-100">
@@ -29,16 +27,39 @@ const Home = () => {
           </span>
           <a
             href=""
-            className=" font-poppins font-normal text-[18px] text-white mb-10"
+            className="font-poppins font-normal text-[18px] text-white mb-10"
           >
             Virtualz
           </a>
           <div>
-    
+            <table className="w-80 h-auto">
+              <tr className="flex justify-between mb-2">
+                <td className="font-poppins font-normal text-[24px] text-white">
+                  Global Rank
+                </td>
+                <td className="font-poppins font-normal text-[24px] text-white">
+                  Not Defined
+                </td>
+              </tr>
+              <tr className="flex justify-between mb-2">
+                <td className="font-poppins font-normal text-[16px] text-white">
+                  Questions Solved
+                </td>
+                <td className="font-poppins font-normal text-[16px] text-white">
+                  200
+                </td>
+              </tr>
+              <tr className="flex justify-between mb-2">
+                <td className="font-poppins font-normal text-[16px] text-white">
+                  Accuracy Solved
+                </td>
+                <td className="font-poppins font-normal text-[16px] text-white">
+                  78.2%
+                </td>
+              </tr>
+            </table>
           </div>
         </div>
-
-
       </section>
       <section id="quesion" className="flex-1 flex justify-center items-start">
         hghj
