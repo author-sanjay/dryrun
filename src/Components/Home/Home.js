@@ -3,8 +3,11 @@ import React from "react";
 
 const Home = () => {
   return (
-    <section id="home" className="flex flex-row py-6">
-      <section id="profile" className="flex-0.3 flex justify-center w-100">
+    <section id="home" className="flex flex-row py-12">
+      <section
+        id="profile"
+        className="flex-0.3 flex mt-10 justify-center w-100"
+      >
         <div className="flex flex-col items-center py-[6px] px-4 bg-profile-gradient rounded-[10px] mb-2 w-96 h-auto">
           <span className="pt-10 font-poppins font-normal cursor-pointer text-[20px] text-white">
             My Profile
@@ -31,7 +34,7 @@ const Home = () => {
           >
             Virtualz
           </a>
-          <div>
+          <div className="mb-10">
             <table className="w-80 h-auto">
               <tr className="flex justify-between mb-2">
                 <td className="font-poppins font-normal text-[24px] text-white">
@@ -58,6 +61,9 @@ const Home = () => {
                 </td>
               </tr>
             </table>
+          </div>
+          <div className="">
+        
           </div>
         </div>
       </section>
