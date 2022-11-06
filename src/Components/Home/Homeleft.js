@@ -41,7 +41,7 @@ const Homeleft = () => {
 
       <div className="flex mb-2 justify-items-center">
         <span className="font-poppins font-normal text-[20px] text-white">
-          Socials
+          Stats
         </span>
       </div>
 
