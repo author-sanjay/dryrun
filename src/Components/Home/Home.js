@@ -1,6 +1,6 @@
-import { Avatar, Grid } from "@material-ui/core";
+import { Avatar, Grid, IconButton } from "@material-ui/core";
 import React from "react";
-
+import { LinkedIn, Instagram, GitHub } from "@material-ui/icons";
 const Home = () => {
   return (
     <section id="home" className="flex flex-row py-12">
@@ -12,6 +12,7 @@ const Home = () => {
           <span className="pt-10 font-poppins font-normal cursor-pointer text-[20px] text-white">
             My Profile
           </span>
+
           <div className="flex flex-column justify-self-auto">
             <div className="px-10 py-5 items-center">
               <Avatar
@@ -22,23 +23,29 @@ const Home = () => {
               />
             </div>
           </div>
+
           <span className="pt-5 font-poppins font-normal cursor-pointer text-[20px] text-white">
             Lucifer
           </span>
+
           <span className="pt-1 font-poppins font-normal text-[13px] text-white">
             Software Developer @
           </span>
+
           <a
             href=""
-            className="font-poppins font-normal text-[18px] text-white mb-10"
+            className="font-poppins font-normal text-[18px] text-white mb-6"
           >
             Virtualz
           </a>
+
           <div className="flex mb-2 justify-items-center">
-            <span className="font-poppins font-normal text-[20px] text-white" >Socials</span>
+            <span className="font-poppins font-normal text-[20px] text-white">
+              Socials
+            </span>
           </div>
-          <div className="mb-6">
-          
+
+          <div className="mb-2">
             <table className="w-80 h-auto">
               <tr className="flex justify-between mb-2">
                 <td className="font-poppins text-white font-normal text-[24px] ">
@@ -48,6 +55,7 @@ const Home = () => {
                   Not Defined
                 </td>
               </tr>
+
               <tr className="flex justify-between mb-2">
                 <td className="font-poppins font-normal text-[16px] text-white">
                   Questions Solved
@@ -56,6 +64,7 @@ const Home = () => {
                   200
                 </td>
               </tr>
+
               <tr className="flex justify-between mb-2">
                 <td className="font-poppins font-normal text-[16px] text-white">
                   Accuracy Solved
@@ -64,6 +73,7 @@ const Home = () => {
                   78.2%
                 </td>
               </tr>
+
               <tr className="flex justify-between mb-2">
                 <td className="font-poppins font-normal text-[16px] text-white">
                   Joined
@@ -74,37 +84,63 @@ const Home = () => {
               </tr>
             </table>
           </div>
+
           <div className="flex mb-2 justify-items-start">
-            <span className="font-poppins font-normal text-[23px] text-white" >Socials</span>
+            <span className="font-poppins font-normal text-[23px] text-white">
+              Socials
+            </span>
           </div>
+
           <div className="items-center">
+            
             <table className="w-80 h-auto">
-              <tr className="flex justify-between mb-2">
+              
+              <tr className="flex justify-between mb-1">
                 <td className="font-poppins font-normal text-[16px] text-white">
-                  Icon
+                  <IconButton>
+                    <LinkedIn
+                      style={{ width: "30px", height: "30px", color: "white" }}
+                    />
+                  </IconButton>
                 </td>
-                <td className="font-poppins font-normal text-[16px] text-white">
+                <td className="font-poppins font-normal text-[16px] text-white mt-3">
                   <a href="">LinkedIn</a>
                 </td>
               </tr>
+              
               <tr className="flex justify-between mb-2">
                 <td className="font-poppins font-normal text-[16px] text-white">
-                  Icon
+                  <IconButton>
+                    <GitHub
+                      style={{ width: "30px", height: "30px", color: "white" }}
+                    />
+                  </IconButton>
                 </td>
-                <td className="font-poppins font-normal text-[16px] text-white">
-                <a href="">Github</a>
+                <td className="font-poppins font-normal text-[16px] text-white mt-3">
+                  <a href="">Github</a>
                 </td>
               </tr>
+              
               <tr className="flex justify-between mb-2">
                 <td className="font-poppins font-normal text-[16px] text-white">
-                  Icon
+                  <IconButton>
+                    <Instagram
+                      style={{ width: "30px", height: "30px", color: "white" }}
+                    />
+                  </IconButton>
                 </td>
-                <td className="font-poppins font-normal text-[16px] text-white">
-                <a href="">Instagram</a>
+                <td className="font-poppins font-normal text-[16px] text-white mt-3">
+                  <a href="">Instagram</a>
                 </td>
               </tr>
+            
             </table>
-          
+          </div>
+          <div className="mt-5 flex flex-col">
+            
+            <a  className="py-3 px-8 mb-6 bg-gradient-to-r from-green-600 to-blue-500 hover:from-green-800 hover:to-green-500 self-center cursor-pointer rounded-lg font-poppins font-normal text-[16px] text-white">See All Submissions</a>
+            
+            <a className="py-3 px-20 mb-6 bg-gradient-to-r from-green-600 to-blue-500 hover:from-red-800 hover:to-red-500 self-center cursor-pointer rounded-lg font-poppins font-normal text-[16px] text-white">Log Out</a>
           </div>
         </div>
       </section>

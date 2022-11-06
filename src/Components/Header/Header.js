@@ -6,7 +6,7 @@ const Header = () => {
     console.log('Hellp')
   }
   return (
-    <nav className='w-full flex py-6 justify-between items-center navbar'>
+    <nav className='w-full flex py-6 pl-10 justify-between items-center navbar'>
         <img src={logo} className="w-[150px] h-[45px]"/>
         <div className='flex flex-row items-center'>
         <ul className='list-none justify-end items-center flex'>

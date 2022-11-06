@@ -64,11 +64,23 @@
   );
 }
 
+.bg-red-gradient {
+  background: linear-gradient(125.17deg, #c54a4a 0%, #5f58af 100%);
+}
+
 .bg-gray-gradient {
   background: linear-gradient(
     153.47deg,
     rgba(255, 255, 255, 0) -341.94%,
     #14101d 95.11%
+  );
+}
+
+.bg-red-gradient {
+  background: linear-gradient(
+    153.47deg,
+    rgba(49, 16, 235, 0.774) -341.94%,
+    #dd1752 95.11%
   );
 }
 
