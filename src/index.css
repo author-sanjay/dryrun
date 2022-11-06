@@ -36,12 +36,12 @@
 
 .bg-blue-gradient {
   background: linear-gradient(
-    157.81deg,
-    #def9fa -43.27%,
-    #bef3f5 -21.24%,
-    #9dedf0 12.19%,
+    300.81deg,
+    #44e2e7 -43.27%,
+    #6ed6da -21.24%,
+    #54bcc0 12.19%,
     #7de7eb 29.82%,
-    #5ce1e6 51.94%,
+    #87d7da 51.94%,
     #33bbcf 90.29%
   );
 }
@@ -93,6 +93,10 @@
 .bg-profile-gradient {
   background: linear-gradient(125.17deg, #272727 0%, #11101d 100%);
 }
+.bg-question-gradient {
+  background-image: linear-gradient(to right bottom, #00040f, #11141a, #1c1e25, #262930, #31343b);
+}
+
 
 .box-shadow {
   box-shadow: 0px 20px 100px -10px rgba(66, 71, 91, 0.1);
@@ -143,7 +147,7 @@
 }
 
 .blue__gradient {
-  background-image: linear-gradient(180deg, rgba(188, 165, 255, 0) 0%, #214d76 100%);
+  background-color: linear-gradient(180deg, rgba(188, 165, 255, 0) 0%, #214d76 100%);
   filter: blur(123px);
 }
 

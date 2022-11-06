@@ -6,7 +6,7 @@ const Homeleft = () => {
   return (
     <section
     id="profile"
-    className="flex-0.3 flex ml-10 mt-8 justify-center w-100"
+    className="flex ml-10 mt-8 justify-center w-auto"
   >
     <div className="flex flex-col items-center py-[6px] px-4 bg-profile-gradient rounded-[10px] mb-2 w-96 h-auto">
       <span className="pt-10 font-poppins font-normal cursor-pointer text-[20px] text-white">
