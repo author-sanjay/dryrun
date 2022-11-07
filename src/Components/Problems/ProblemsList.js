@@ -40,7 +40,7 @@ const ProblemsList = () => {
         </div>
         <hr className="mt-4 opacity-50" />
         <div className="flex flex-col w-full mt-4 ">
-          <div className="flex flex-row px-2 mt-4 border py-2 rounded-[20px]">
+          <div className="flex cursor-pointer flex-row px-2 mt-4 border py-2 rounded-[20px]">
             <div className="w-[30%] font-poppins font-normal text-[20px] text-white ">
               Question Id
             </div>
@@ -51,7 +51,7 @@ const ProblemsList = () => {
               Avg Time Taken
             </div>
           </div>
-          <div className="flex flex-row px-2 mt-4 border py-2 rounded-[20px]">
+          <div className="flex flex-row px-2 cursor-pointer mt-4 border py-2 rounded-[20px]">
             <div className="w-[30%] font-poppins font-normal text-[20px] text-white ">
               Question Id
             </div>
@@ -62,7 +62,7 @@ const ProblemsList = () => {
               Avg Time Taken
             </div>
           </div>
-          <div className="flex flex-row mt-4 px-2 border py-2 rounded-[20px]">
+          <div className="flex flex-row mt-4 px-2 border cursor-pointer py-2 rounded-[20px]">
             <div className="w-[30%] font-poppins font-normal text-[20px] text-white ">
               Question Id
             </div>
