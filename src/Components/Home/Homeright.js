@@ -1,7 +1,7 @@
 import { Avatar } from "@material-ui/core";
 import React from "react";
-import { Whatshot } from "@material-ui/icons";
-import { TurnedIn } from "@material-ui/icons";
+import { Whatshot, TurnedIn, Bookmark, Code } from "@material-ui/icons";
+
 const Homeright = () => {
   return (
     <section id="profile" className="flex ml-10 mt-8 px-12 w-full h-auto">
@@ -12,8 +12,10 @@ const Homeright = () => {
               <span className="pt-2 font-poppins font-normal cursor-pointer text-[27px] text-white">
                 Ready For Job? Apply Now...
               </span>
-              <TurnedIn className="font-normal cursor-pointer text-white mt-2 ml-5" style={{fontSize:"40px"}}/>
-              
+              <TurnedIn
+                className="font-normal cursor-pointer text-white mt-2 ml-5"
+                style={{ fontSize: "40px" }}
+              />
             </div>
           </div>
           <div className="h-auto w-[30%] flex flex-row bg-profile-gradient py-4 mb-5 rounded-[15px]">
@@ -31,8 +33,11 @@ const Homeright = () => {
           </div>
         </div>
 
+        <span className="pt-4 font-poppins font-normal cursor-pointer text-[45px] text-white">
+          Start Practice Now...
+        </span>
 
-        <div className="flex flex-row justify-between items-center mt-10 ">
+        <div className="flex flex-row justify-between items-center mt-2 ">
           {/* QUESTION CARD */}
           <div className="bg-blue-gradient w-full h-80 rounded-[20px] px-10 py-10">
             <div className="flex flex-row justify-between">
@@ -83,6 +88,17 @@ const Homeright = () => {
               </div>
             </div>
           </div>
+        </div>
+
+        <div className="flex flex-row justify-between items-center mt-12 ">
+          <a className="ml-3 py-2 bg-gradient-to-r from-green-600 to-blue-500 hover:from-red-800 hover:to-red-500 cursor-pointer w-[45%] h-auto font-poppins font-normal text-[25px] rounded-[10px] text-center text-white">
+            Save For Later{" "}
+            <Bookmark style={{ color: "white", fontSize: "35px" }} />
+          </a>
+          <a className="ml-3 py-2  bg-gradient-to-r from-green-600 to-blue-500 hover:from-green-900 hover:to-green-700 cursor-pointer w-[45%] h-auto font-poppins font-normal text-[25px] rounded-[10px]  text-center text-white">
+            Attempt Question{" "}
+            <Code style={{ color: "white", fontSize: "35px" }} />
+          </a>
         </div>
       </div>
     </section>

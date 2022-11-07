@@ -46,6 +46,14 @@
   );
 }
 
+.bg-button-gradient {
+  background-image: linear-gradient(to left bottom, #cd4f3c, #d5463c, #dc3b3d, #e42c3f, #eb1242);
+}
+
+.bg-attempt-gradient {
+  background-image: linear-gradient(to left bottom, #3ccd62, #35d273, #2fd783, #2bdc92, #2ae1a1);
+}
+
 .bg-bluecard-gradient {
   background-image: linear-gradient(to bottom, #0f0a0d, #161416, #1c1b1d, #232225, #29292c, #2a2b2e, #2c2c2f, #2d2e31, #292a2d, #252629, #212325, #1d1f21);
 }
