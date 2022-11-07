@@ -7,7 +7,7 @@ const Problems = () => {
   return (
     <div className="px-6 flex justify-center items-center">
       <div className="max-w-[1480px] w-full">
-        <section id="home" className="flex flex-row py-12">
+        <section id="problem" className="flex flex-row py-12">
           <Homeleft/>
           <ProblemsList/>
         </section>
