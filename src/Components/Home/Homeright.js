@@ -1,10 +1,28 @@
 import { Avatar } from "@material-ui/core";
 import React from "react";
-
+import { Whatshot } from "@material-ui/icons";
 const Homeright = () => {
   return (
     <section id="profile" className="flex ml-10 mt-8 px-12 w-full h-auto">
       <div className="flex  flex-col py-[6px] px-4 rounded-[10px] mb-2 w-full h-auto">
+        <div className="flex flex-row">
+          <div className="h-auto w-[75%] mr-4 bg-profile-gradient py-6 mb-5 rounded-[15px]">
+            Hello
+          </div>
+          <div className="h-auto w-[25%] flex flex-row bg-profile-gradient py-4 mb-5 rounded-[15px]">
+            <Whatshot
+              className="ml-5"
+              style={{
+                color: "orangered",
+                fontSize: "70px",
+                alignSelf: "center",
+              }}
+            />
+            <span className="pt-4 font-poppins font-normal cursor-pointer text-[27px] text-white">
+              10 Days{" "}
+            </span>
+          </div>
+        </div>
         <div className="flex flex-row justify-between items-center w-">
           {/* QUESTION CARD */}
           <div className="bg-blue-gradient w-full h-80 rounded-[20px] px-10 py-10">
