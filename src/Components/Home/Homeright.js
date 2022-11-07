@@ -105,4 +105,4 @@ const Homeright = () => {
   );
 };
 
-export default Homeright;
+export default Homeright; 

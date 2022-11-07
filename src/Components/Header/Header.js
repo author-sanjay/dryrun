@@ -1,5 +1,6 @@
 import { Avatar } from '@material-ui/core'
 import React from 'react'
+import { Link } from 'react-router-dom'
 import logo from "./logo.png"
 const Header = () => {
   const action=()=>{
@@ -10,7 +11,7 @@ const Header = () => {
         <img src={logo} className="w-[150px] h-[45px]"/>
         <div className='flex flex-row items-center'>
         <ul className='list-none justify-end items-center flex'>
-            <li className='font-poppins font-normal cursor-pointer text-[16px] text-white mr-10' key="problems">Problems</li>
+            <li className='font-poppins font-normal cursor-pointer text-[16px] text-white mr-10' key="problems"><Link to="/problems">Problems</Link> </li>
             <li className='font-poppins font-normal cursor-pointer text-[16px] text-white mr-10' key="contests">Contests</li>
             <li className='font-poppins font-normal cursor-pointer text-[16px] text-white mr-10' key="learn">Learn</li>
             {/* <Avatar src="https://flxt.tmsimg.com/assets/p18480237_b_v13_ac.jpg"/> */}

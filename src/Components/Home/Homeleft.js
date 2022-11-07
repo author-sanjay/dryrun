@@ -38,9 +38,10 @@ const Homeleft = () => {
       >
         Virtualz
       </a>
-
+    
       <div className="flex mb-2 justify-items-center">
-        <span className="font-poppins font-normal text-[20px] text-white">
+      
+        <span className="font-poppins font-normal text-[25px] text-white">
           Stats
         </span>
       </div>
