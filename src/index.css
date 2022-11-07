@@ -46,6 +46,10 @@
   );
 }
 
+.bg-bluecard-gradient {
+  background-image: linear-gradient(to bottom, #0f0a0d, #161416, #1c1b1d, #232225, #29292c, #2a2b2e, #2c2c2f, #2d2e31, #292a2d, #252629, #212325, #1d1f21);
+}
+
 .bg-black-gradient {
   background: linear-gradient(
     144.39deg,
@@ -153,6 +157,11 @@
 
 .pink__gradient {
   background: linear-gradient(90deg, #f4c4f3 0%, #fc67fa 100%);
+  filter: blur(900px);
+}
+
+.streakcard__gradient {
+  background-image: linear-gradient(to left, #2a2227, #2b252b, #2c292e, #2d2c31, #2f2f33, #2f2f34, #2e3035, #2d3036, #292e36, #242d37, #1f2b37, #182a37);
   filter: blur(900px);
 }
 
