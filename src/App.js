@@ -4,6 +4,7 @@ import Home from "./Components/Home/Home";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Problems from "./Components/Problems/Problems";
 import CodeEditor from "./Components/CodeEditor/CodeEditor";
+import Login from "./Components/Login/Login";
 
 function App() {
   return (
@@ -51,6 +52,21 @@ function App() {
                 <div className="max-w-[1480px] w-full">
                   <Header />
                   <CodeEditor/>
+                </div>
+              </div>
+            </div>
+          }
+        />
+      </Routes>
+      <Routes>
+        <Route
+          path="/login"
+          element={
+            <div className="bg-login-gradient  w-full overflow-hidden" >
+              <div className="px-6 flex justify-center items-center">
+                <div className="max-w-[1480px] w-full">
+                  
+                  <Login/>
                 </div>
               </div>
             </div>

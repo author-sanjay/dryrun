@@ -1,8 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import Split from "react-split";
 import "./codeeditor.css";
 import Myeditor from "./Myeditor";
+import Dropdown from "react-dropdown";
+import "react-dropdown/style.css";
 const CodeEditor = () => {
+  const [language, setlanguage] = useState();
+  const handlechange = (e) => {
+    console.log(e.target.value);
+  };
+
   return (
     <div className="flex justify-center items-center">
       <div className="max-w-[1480px] w-full">
@@ -82,14 +89,43 @@ const CodeEditor = () => {
               </div>
             </div>
             <div className="flex flex-col ml-4  w-full text-white">
-              <div className="h-10 items-center rounded-[10px] mb-2 border w-full flex flex-row">
-                <span className="font-poppins font-normal text-[15px] h-[50%] text-white px-5">Language:</span>
-                <select id="language" className="">
-                    <option value="JavaScript">JavaScript</option>
+              <div className="h-12 py-5 items-center rounded-[10px] mb-2 border w-full flex flex-row">
+                <span className="font-poppins font-normal text-[18px] h-[50%] text-white px-5 mb-6">
+                  Language:
+                </span>
+                <select
+                  className="bg-black font-poppins cursor-pointer border rounded-[10px] px-14 font-normal text-[18px]  text-white px-5 "
+                  onChange={handlechange}
+                >
+                  <option values="js">Javascript</option>
+                  <option values="C++">C++</option>
+                  <option values="Python">Python</option>
                 </select>
               </div>
               <Myeditor />
-              <div className="h-auto w-full">hhhjh</div>
+              <div className="h-auto flex flex-col w-full mt-5">
+                <div className="flex flex-row justify-between">
+                  <a className="py-3 px-8 mb-4  border rounded-[10px] self-center cursor-pointer rounded-lg font-poppins font-normal text-[16px] text-white">
+                    Run Test Case
+                  </a>
+
+                  <a className="py-3 px-20 mb-4  self-center cursor-pointer border rounded-[10px]  rounded-lg font-poppins font-normal text-[16px] text-white">
+                    Submit Answer
+                  </a>
+                </div>
+
+                <div className="flex flex-col justify-between w-full h-auto border">
+                  <div className="ml-4 mb-4">
+                  <span className=" font-poppins font-normal text-[25px]  h-[50%] text-white ">
+                    Congratulations... Your Code Worked...
+                  </span>
+                  </div>
+                  <a className="py-2 px-20 mb-4  self-center cursor-pointer border rounded-[10px]  rounded-lg font-poppins font-normal text-[16px] text-white">
+                    Attempt Next Question
+                  </a>
+                </div>
+
+              </div>
             </div>
           </Split>
         </section>

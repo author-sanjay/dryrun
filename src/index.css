@@ -46,6 +46,10 @@
   );
 }
 
+.bg-login-gradient {
+  background-image: linear-gradient(to top, #1f2134, #1f2236, #1e2339, #1e243b, #1d253e, #19273e, #16283d, #13293c, #132a37, #162a32, #1b2a2e, #20292a);
+}
+
 .bg-button-gradient {
   background-image: linear-gradient(to left bottom, #cd4f3c, #d5463c, #dc3b3d, #e42c3f, #eb1242);
 }
