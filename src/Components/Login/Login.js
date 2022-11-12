@@ -4,7 +4,7 @@ const Login = () => {
   const [email, setemail] = useState();
   const [password, setpassword] = useState();
 
-  return (
+   return (
     <div className="w-full py-12 px-16 flex  flex-col h-full justify-self-center">
       <div className="flex flex-col justify-self-center  w-full  item-center justify-center">
         <span className="pt-10 font-poppins font-normal cursor-pointer text-[60px] text-white">

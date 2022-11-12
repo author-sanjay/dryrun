@@ -6,9 +6,12 @@ import Problems from "./Components/Problems/Problems";
 import CodeEditor from "./Components/CodeEditor/CodeEditor";
 import Login from "./Components/Login/Login";
 import { Provider } from "react-redux";
+import {store} from "./store/store"
+import { useSelector } from "react-redux";
+import Homewithauth from "./Components/Home/Homewithauth";
 
 function App() {
-
+    
   return (
     <Provider store={store}>
     <BrowserRouter>
@@ -24,7 +27,7 @@ function App() {
               </div>
               <div className="px-6 flex justify-center items-center">
                 <div className="max-w-[1480px] w-full">
-                  <Home />
+                  <Homewithauth/>
                 </div>
               </div>
             </div>
