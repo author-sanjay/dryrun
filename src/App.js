@@ -5,9 +5,12 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Problems from "./Components/Problems/Problems";
 import CodeEditor from "./Components/CodeEditor/CodeEditor";
 import Login from "./Components/Login/Login";
+import { Provider } from "react-redux";
 
 function App() {
+
   return (
+    <Provider store={store}>
     <BrowserRouter>
       <Routes>
         <Route
@@ -74,6 +77,7 @@ function App() {
         />
       </Routes>
     </BrowserRouter>
+    </Provider>
   );
 }
 
