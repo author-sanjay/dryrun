@@ -12,9 +12,9 @@ const Login = () => {
   };
 
   const checkuser=(data)=>{
-    axios.post(`${base_url}/adduser`,data).then(
+    axios.post(`${base_url}/auth`,data).then(
       (response)=>{
-        console.log(response)
+        console.log(response.data)
       },(error)=>{
         console.log(error)
       }
@@ -22,16 +22,7 @@ const Login = () => {
     
   };
 
-  const authrize = () => {
-    axios.get(`${base_url}/auth`).then(
-      (response) => {
-        console.log(response);
-      },
-      (error) => {
-        console.log(error);
-      }
-    );
-  };
+
   return (
     <div className="w-full py-12 px-16 flex  flex-col h-full justify-self-center">
       <div className="flex flex-col justify-self-center  w-full  item-center justify-center">
