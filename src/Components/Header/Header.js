@@ -1,11 +1,13 @@
 import { Avatar } from '@material-ui/core'
 import React from 'react'
+import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 import logo from "./logo.png"
 const Header = () => {
   const action=()=>{
-    console.log('Hellp')
+    console.log("juh")
   }
+  const user=useSelector((state)=>state.user);
   return (
     <nav className='w-full flex py-6 pl-10 justify-between items-center navbar'>
         <img src={logo} className="w-[150px] h-[45px]"/>
@@ -16,9 +18,12 @@ const Header = () => {
             <li className='font-poppins font-normal cursor-pointer text-[16px] text-white mr-10' key="learn">Learn</li>
             {/* <Avatar src="https://flxt.tmsimg.com/assets/p18480237_b_v13_ac.jpg"/> */}
         </ul>
-        <div className='flex cursor-pointer' onClick={action} >
+        {user==null?<div className='font-poppins font-normal cursor-pointer text-[16px] text-white mr-10' onClick={action} >
+        <button>Login/Signup</button>
+        </div>:<div className='flex cursor-pointer' onClick={action} >
         <Avatar src="https://flxt.tmsimg.com/assets/p18480237_b_v13_ac.jpg"/>
-        </div>
+        </div>}
+        
         </div>
         
     </nav>

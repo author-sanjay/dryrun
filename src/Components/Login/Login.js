@@ -1,10 +1,38 @@
 import React, { useEffect, useState } from "react";
 import md5 from "md5";
+import base_url from "../../api/api";
+import axios from "axios";
+import { data } from "autoprefixer";
 const Login = () => {
-  const [email, setemail] = useState();
-  const [password, setpassword] = useState();
+  const [credentials, setcredentials] = useState({});
+  const handlesubmit = (e) => {
+    // console.log(credentials.email)
+    checkuser(credentials);
+    e.preventDefault();
+  };
 
-   return (
+  const checkuser=(data)=>{
+    axios.get(`${base_url}/auth`,{data}).then(
+      (response)=>{
+        console.log(response)
+      },(error)=>{
+        console.log(error)
+      }
+      );
+    
+  };
+
+  const authrize = () => {
+    axios.get(`${base_url}/auth`).then(
+      (response) => {
+        console.log(response);
+      },
+      (error) => {
+        console.log(error);
+      }
+    );
+  };
+  return (
     <div className="w-full py-12 px-16 flex  flex-col h-full justify-self-center">
       <div className="flex flex-col justify-self-center  w-full  item-center justify-center">
         <span className="pt-10 font-poppins font-normal cursor-pointer text-[60px] text-white">
@@ -27,34 +55,43 @@ const Login = () => {
               </span>
             </div>
             <div className=" mt-10 w-full flex flex-col w-[80%] self-center">
-              <input
-                type="text"
-                name="Email"
-                placeholder="     Email"
-                className="w-full h-12 rounded-[20px] mt-4"
-                onChange={(e) => setemail(e.target.value)}
-              />
-              <input
-                type="password"
-                name="paswword"
-                placeholder="     Password"
-                className="w-full mt-4 h-12 mt-4 rounded-[20px]"
-                onChange={(e) => setpassword(e.target.value)}
-              />
-              <div className="py-8 w-full ">
-                <button
-                  type="submit"
-                  className="bg-white w-full h-12 rounded-[20px]"
-                >
-                  Login
-                </button>
-                
-                <div className="justify-items-end mt-2">
-                <a className="self-end font-poppins font-normal cursor-pointer text-[15px] text-white" >
-              Don't have an Account? Register...
-            </a></div>
-            </div>
-              
+              <form onSubmit={handlesubmit}>
+                <input
+                  type="text"
+                  name="email"
+                  placeholder="     Email"
+                  className="w-full h-12 rounded-[20px] mt-4"
+                  onChange={(e) => {
+                    setcredentials({ ...credentials, email: e.target.value });
+                  }}
+                />
+                <input
+                  type="password"
+                  name="paswword"
+                  placeholder="     Password"
+                  className="w-full mt-4 h-12 mt-4 rounded-[20px]"
+                  onChange={(e) => {
+                    setcredentials({
+                      ...credentials,
+                      password: e.target.value,
+                    });
+                  }}
+                />
+                <div className="py-8 w-full ">
+                  <button
+                    type="submit"
+                    className="bg-white w-full h-12 rounded-[20px]"
+                  >
+                    Login
+                  </button>
+
+                  <div className="justify-items-end mt-2">
+                    <a className="self-end font-poppins font-normal cursor-pointer text-[15px] text-white">
+                      Don't have an Account? Register...
+                    </a>
+                  </div>
+                </div>
+              </form>
             </div>
           </div>
         </div>

@@ -71,7 +71,7 @@ function App() {
             <div className="bg-login-gradient  w-full overflow-hidden" >
               <div className="px-6 flex justify-center items-center">
                 <div className="max-w-[1480px] w-full">
-                  
+                  <Header/>
                   <Login/>
                 </div>
               </div>
