@@ -1,27 +1,28 @@
-import React, { useEffect, useState } from "react";
-import md5 from "md5";
-import base_url from "../../api/api";
-import axios from "axios";
-import { data } from "autoprefixer";
+import React, { useState } from "react";
+import GoogleButton from "react-google-button";
+import { useDispatch, useSelector } from "react-redux";
+import { setActiveUser } from "../../store/authSlice";
+import Header from "../Header/Header";
+import { auth, provider } from "./firebase";
+import LoginSuccess from "./LoginSuccess";
 const Login = () => {
-  const [credentials, setcredentials] = useState({});
-  const handlesubmit = (e) => {
-    // console.log(credentials.email)
-    checkuser(credentials);
-    e.preventDefault();
+  const dispatch = useDispatch();
+  const loggedin = useSelector((state) => state.auth);
+
+  const handlesignin = () => {
+    auth.signInWithPopup(provider).then((result) => {
+      dispatch(setActiveUser(result.user));
+    });
   };
 
-  const checkuser=(data)=>{
-    axios.post(`${base_url}/auth`,data).then(
-      (response)=>{
-        console.log(response.data)
-      },(error)=>{
-        console.log(error)
-      }
-      );
-    
+  const handlesignout = () => {
+    auth
+      .signOut()
+      .then(() => {
+        dispatch(auth.setUserLogout());
+      })
+      .catch((error) => alert(error.message));
   };
-
 
   return (
     <div className="w-full py-12 px-16 flex  flex-col h-full justify-self-center">
@@ -29,6 +30,7 @@ const Login = () => {
         <span className="pt-10 font-poppins font-normal cursor-pointer text-[60px] text-white">
           Login
         </span>
+        
         <hr className="mb-16" />
         <div className="flex flex-col items-center py-16 ">
           <div className="flex flex-col items-center justify-center w-[60%] ">
@@ -45,44 +47,14 @@ const Login = () => {
                 RY RUN
               </span>
             </div>
-            <div className=" mt-10 w-full flex flex-col w-[80%] self-center">
-              <form method="post" onSubmit={handlesubmit}>
-                <input
-                  type="text"
-                  name="email"
-                  placeholder="     Email"
-                  className="w-full h-12 rounded-[20px] mt-4"
-                  onChange={(e) => {
-                    setcredentials({ ...credentials, email: e.target.value });
-                  }}
-                />
-                <input
-                  type="password"
-                  name="paswword"
-                  placeholder="     Password"
-                  className="w-full mt-4 h-12 mt-4 rounded-[20px]"
-                  onChange={(e) => {
-                    setcredentials({
-                      ...credentials,
-                      password: e.target.value,
-                    });
-                  }}
-                />
-                <div className="py-8 w-full ">
-                  <button
-                    type="submit"
-                    className="bg-white w-full h-12 rounded-[20px]"
-                  >
-                    Login
-                  </button>
-
-                  <div className="justify-items-end mt-2">
-                    <a className="self-end font-poppins font-normal cursor-pointer text-[15px] text-white">
-                      Don't have an Account? Register...
-                    </a>
-                  </div>
-                </div>
-              </form>
+            <div className=" mt-10 w-full flex flex-col w-[80%] items-center">
+              {loggedin.user==null?(<GoogleButton
+                  type="dark" 
+                  style={{width:"296px", marginBottom:"100px"}}
+                  onClick={handlesignin}
+                />):(<LoginSuccess/>)}
+                
+              
             </div>
           </div>
         </div>

@@ -1,8 +1,13 @@
 import { Avatar, Grid, IconButton } from "@material-ui/core";
 import React from "react";
 import { LinkedIn, Instagram, GitHub } from "@material-ui/icons";
-
+import { useDispatch } from "react-redux";
+import { setUserLogout } from "../../store/authSlice";
 const Homeleft = () => {
+  const dispatch=useDispatch();
+  const handlesignout=()=>{
+    dispatch(setUserLogout());
+  }
   return (
     <section
     id="profile"
@@ -141,7 +146,7 @@ const Homeleft = () => {
         
         <a  className="py-3 px-8 mb-6 bg-gradient-to-r from-green-600 to-blue-500 hover:from-green-900 hover:to-green-700 self-center cursor-pointer rounded-lg font-poppins font-normal text-[16px] text-white">See All Submissions</a>
         
-        <a className="py-3 px-20 mb-6 bg-gradient-to-r from-green-600 to-blue-500 hover:from-red-800 hover:to-red-500 self-center cursor-pointer rounded-lg font-poppins font-normal text-[16px] text-white">Log Out</a>
+        <a className="py-3 px-20 mb-6 bg-gradient-to-r from-green-600 to-blue-500 hover:from-red-800 hover:to-red-500 self-center cursor-pointer rounded-lg font-poppins font-normal text-[16px] text-white" onClick={handlesignout}>Log Out</a>
       </div>
     </div>
   </section>

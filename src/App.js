@@ -7,7 +7,7 @@ import CodeEditor from "./Components/CodeEditor/CodeEditor";
 import Login from "./Components/Login/Login";
 import { Provider } from "react-redux";
 import {store} from "./store/store"
-import { useSelector } from "react-redux";
+
 import Homewithauth from "./Components/Home/Homewithauth";
 
 function App() {
@@ -79,6 +79,7 @@ function App() {
           }
         />
       </Routes>
+     
     </BrowserRouter>
     </Provider>
   );
