@@ -12,7 +12,7 @@ const Login = () => {
   };
 
   const checkuser=(data)=>{
-    axios.get(`${base_url}/auth`,{data}).then(
+    axios.post(`${base_url}/adduser`,data).then(
       (response)=>{
         console.log(response)
       },(error)=>{
@@ -55,7 +55,7 @@ const Login = () => {
               </span>
             </div>
             <div className=" mt-10 w-full flex flex-col w-[80%] self-center">
-              <form onSubmit={handlesubmit}>
+              <form method="post" onSubmit={handlesubmit}>
                 <input
                   type="text"
                   name="email"
