@@ -9,6 +9,7 @@ import { Provider } from "react-redux";
 import {store} from "./store/store"
 
 import Homewithauth from "./Components/Home/Homewithauth";
+import EditProfile from "./Components/EditProfile/EditProfile";
 
 function App() {
     
@@ -70,11 +71,32 @@ function App() {
         <Route
           path="/login"
           element={
-            <div className="bg-login-gradient  w-full overflow-hidden" style={{height:"100%"}}>
+            <div className="bg-primary  w-full overflow-hidden" style={{height:"100%"}}>
               <div className="px-6 flex justify-center items-center">
                 <div className="max-w-[1480px] w-full">
                   <Header/>
                   <Login/>
+                </div>
+              </div>
+            </div>
+          }
+        />
+      </Routes>
+      <Routes>
+        <Route
+          path="/edit-profile"
+          element={
+            <div className="bg-primary  w-full overflow-hidden" style={{height:"100%"}}>
+              <div className="px-6 flex justify-center items-center">
+                <div className="max-w-[1480px] w-full">
+                  <Header/>
+                  
+                </div>
+              </div>
+              <div className="px-6 flex justify-center items-center">
+                <div className="max-w-[1480px] w-full">
+                  <EditProfile/>
+                  
                 </div>
               </div>
             </div>

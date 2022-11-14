@@ -51,7 +51,7 @@ const Login = () => {
             <div className=" mt-10 w-full flex flex-col w-[80%] items-center">
               {loggedin.user==null?(<GoogleButton
                   type="dark" 
-                  style={{width:"296px", marginBottom:"100px"}}
+                  style={{width:"330px", marginBottom:"100px"}}
                   onClick={handlesignin}
                 />):(<LoginSuccess/>)}
                 
