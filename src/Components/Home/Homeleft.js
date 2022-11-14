@@ -3,9 +3,13 @@ import React from "react";
 import { LinkedIn, Instagram, GitHub } from "@material-ui/icons";
 import { useDispatch } from "react-redux";
 import { setUserLogout } from "../../store/authSlice";
+import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 const Homeleft = () => {
+  const loggedin = useSelector((state) => state.auth);
   const dispatch=useDispatch();
   
+  console.log(loggedin.user)
   const handlesignout=()=>{
     dispatch(setUserLogout());
     
@@ -26,25 +30,26 @@ const Homeleft = () => {
             className="avatar"
             style={{ height: "200px", width: "200px" }}
             sizes="xxl"
-            src="https://flxt.tmsimg.com/assets/p18480237_b_v13_ac.jpg"
+            src={loggedin.user.photoURL}
           />
         </div>
       </div>
 
       <span className="pt-5 font-poppins font-normal cursor-pointer text-[20px] text-white">
-        Lucifer
+        {loggedin.user.displayname}
       </span>
 
-      <span className="pt-1 font-poppins font-normal text-[13px] text-white">
-        Software Developer @
+      <span className="pt-1 font-poppins font-normal text-[15px] text-white">
+        {loggedin.user.jopprofile==null?"Coder @":loggedin.user.jopprofile}
       </span>
 
       <a
         href=""
         className="font-poppins font-normal text-[18px] text-white mb-6"
       >
-        Virtualz
+        {loggedin.user.company==null?"Dry Run":loggedin.user.company}
       </a>
+      <a  className="py-1 px-5 mb-6 bg-none border-2 border-white self-center cursor-pointer rounded font-poppins font-normal text-[12px] text-white"><Link to="/edit-profile">Edit Profile</Link></a>
     
       <div className="flex mb-2 justify-items-center">
       
@@ -82,14 +87,7 @@ const Homeleft = () => {
             </td>
           </tr>
 
-          <tr className="flex justify-between mb-2">
-            <td className="font-poppins font-normal text-[16px] text-white">
-              Joined
-            </td>
-            <td className="font-poppins font-normal text-[16px] text-white">
-              06 June 2022
-            </td>
-          </tr>
+         
         </table>
       </div>
 

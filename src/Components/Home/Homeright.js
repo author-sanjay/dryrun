@@ -4,7 +4,7 @@ import { Whatshot, TurnedIn, Bookmark, Code } from "@material-ui/icons";
 
 const Homeright = () => {
   return (
-    <section id="profile" className="flex ml-10 mt-8 px-12 w-full h-auto">
+    <section id="profile" className="flex ml-10 mt-8 px-12 w-full h-auto" >
       <div className="flex  flex-col py-[6px] px-4 rounded-[10px] mb-2 w-full h-auto">
         <div className="flex flex-row ">
           <div className="h-auto w-[70%] mr-4 bg-profile-gradient py-6 mb-5 rounded-[15px]">
@@ -39,7 +39,7 @@ const Homeright = () => {
 
         <div className="flex flex-row justify-between items-center mt-2 ">
           {/* QUESTION CARD */}
-          <div className="bg-blue-gradient w-full h-80 rounded-[20px] px-10 py-10">
+          <div className="bg-blue-gradient w-auto h-auto rounded-[20px] px-10 py-10">
             <div className="flex flex-row justify-between">
               <div className="flex flex-row ">
                 <h2 className="font-poppins font-normal text-[20px] text-black py-2">
@@ -67,7 +67,7 @@ const Homeright = () => {
                 <a className="font-poppins font-semibold cursor-pointer font-normal text-[40px] text-black py-5">
                   Longest Substring Without Repeating Characters
                 </a>
-                <div className="flex flex-row justify-between">
+                <div className="flex flex-row justify-between h-auto w-auto">
                   <div className="flex flex-row space-x-4">
                     <h3 className="mt-1">Tags:</h3>
                     <a className="px-4  cursor-pointer py-1 rounded-[10px] bg-white ">
