@@ -19,7 +19,8 @@ function App() {
         <Route
           path="/"
           element={
-            <div className="bg-primary  w-full overflow-hidden">
+            
+            <div className="bg-primary  w-full " >
               <div className="px-6 flex justify-center items-center">
                 <div className="max-w-[1480px] w-full">
                   <Header />
@@ -31,6 +32,7 @@ function App() {
                 </div>
               </div>
             </div>
+            
           }
         />
       </Routes>
@@ -38,7 +40,7 @@ function App() {
         <Route
           path="/problems"
           element={
-            <div className="bg-primary  w-full overflow-hidden">
+            <div className="bg-primary  w-full overflow-hidden" style={{height:"100%"}}>
               <div className="px-6 flex justify-center items-center">
                 <div className="max-w-[1480px] w-full">
                   <Header />
@@ -53,7 +55,7 @@ function App() {
         <Route
           path="/code-editor"
           element={
-            <div className="bg-primary  w-full overflow-hidden">
+            <div className="bg-primary  w-full overflow-hidden" style={{height:"100%"}}>
               <div className="px-6 flex justify-center items-center">
                 <div className="max-w-[1480px] w-full">
                   <Header />
@@ -68,7 +70,7 @@ function App() {
         <Route
           path="/login"
           element={
-            <div className="bg-login-gradient  w-full overflow-hidden" >
+            <div className="bg-login-gradient  w-full overflow-hidden" style={{height:"100%"}}>
               <div className="px-6 flex justify-center items-center">
                 <div className="max-w-[1480px] w-full">
                   <Header/>
