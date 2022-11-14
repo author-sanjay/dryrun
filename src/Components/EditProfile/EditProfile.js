@@ -1,9 +1,20 @@
+import axios from "axios";
 import React, { useState } from "react";
-
+import { useSelector } from "react-redux";
+import base_url from "../../api/api";
 const EditProfile = () => {
-  const [data, setdata] = useState({});
-  const handleclick=()=>{
-    console.log(data);
+  const loggedin = useSelector((state) => state.auth);
+  var temp=new Object();
+    temp["displayname"]=loggedin.user.displayName;
+    temp["email"]=loggedin.user.email;
+    temp["photoURL"]=loggedin.user.photoURL;
+    temp["uid"]=loggedin.user.uid;
+ 
+
+  const postdata=()=>{
+    axios.post(`${base_url}/updateuser/${loggedin.user.uid}`,temp).then((response)=>{
+      console.log(response.data);
+    })
   }
   return (
     <div className="w-full py-12 px-16 flex  flex-col h-full justify-self-center">
@@ -45,12 +56,9 @@ const EditProfile = () => {
                 <span className="w-1/2  font-poppins font-normal cursor-pointer text-[20px] text-white">
                   Address
                 </span>
-                <input
+                <input 
                   onChange={(e) => {
-                    setdata({
-                      ...data,
-                      address: e.target.value,
-                    });
+                    temp["address"]=e.target.value;
                   }}
                   className="mx-5 w-1/2 px-5 h-[40px] bg-white"
                   name="address"
@@ -63,10 +71,7 @@ const EditProfile = () => {
                 </span>
                 <input
                   onChange={(e) => {
-                    setdata({
-                      ...data,
-                      phonenumber: e.target.value,
-                    });
+                    temp["phonenumber"]=e.target.value;
                   }}
                   className="h-[40px] mx-5 px-5 w-1/2 bg-white"
                   name="phonenumber"
@@ -81,10 +86,8 @@ const EditProfile = () => {
                 </span>
                 <input
                   onChange={(e) => {
-                    setdata({
-                      ...data,
-                      country: e.target.value,
-                    });
+                    temp["country"]=e.target.value;
+
                   }}
                   className="mx-5 px-5 h-[40px] w-1/2 bg-white"
                   name="country"
@@ -97,10 +100,8 @@ const EditProfile = () => {
                 </span>
                 <input
                   onChange={(e) => {
-                    setdata({
-                      ...data,
-                      jobRole: e.target.value,
-                    });
+                    temp["jobRole"]=e.target.value;
+                  
                   }}
                   className="mx-5 px-5 bg-white h-[40px] w-1/2"
                   name="Job Role"
@@ -115,10 +116,8 @@ const EditProfile = () => {
                 </span>
                 <input
                   onChange={(e) => {
-                    setdata({
-                      ...data,
-                      highestdegree: e.target.value,
-                    });
+                    temp["highestdegree"]=e.target.value;
+                  
                   }}
                   className="mx-5 px-5 bg-white w-1/2 h-[40px]"
                   name="Company"
@@ -131,10 +130,8 @@ const EditProfile = () => {
                 </span>
                 <input
                   onChange={(e) => {
-                    setdata({
-                      ...data,
-                      collegename: e.target.value,
-                    });
+                    temp["collegename"]=e.target.value;
+                  
                   }}
                   className="mx-5 px-5 w-1/2 bg-white h-[40px]"
                   name="github"
@@ -149,10 +146,8 @@ const EditProfile = () => {
                 </span>
                 <input
                   onChange={(e) => {
-                    setdata({
-                      ...data,
-                      company: e.target.value,
-                    });
+                    temp["company"]=e.target.value;
+                    
                   }}
                   className="mx-5 px-5 bg-white w-1/2 h-[40px]"
                   name="Company"
@@ -165,10 +160,8 @@ const EditProfile = () => {
                 </span>
                 <input
                   onChange={(e) => {
-                    setdata({
-                      ...data,
-                      github: e.target.value,
-                    });
+                    temp["github"]=e.target.value;
+                    
                   }}
                   className="mx-5 px-5 w-1/2 bg-white h-[40px]"
                   name="github"
@@ -183,10 +176,8 @@ const EditProfile = () => {
                 </span>
                 <input
                   onChange={(e) => {
-                    setdata({
-                      ...data,
-                      linkedin: e.target.value,
-                    });
+                    temp["linkedin"]=e.target.value;
+                   
                   }}
                   className="mx-5 px-5 w-1/2 bg-white h-[40px]"
                   name="linkedin"
@@ -199,10 +190,8 @@ const EditProfile = () => {
                 </span>
                 <input
                   onChange={(e) => {
-                    setdata({
-                      ...data,
-                      instagram: e.target.value,
-                    });
+                    temp["instagram"]=e.target.value;
+                  
                   }}
                   className="mx-5 px-5 bg-white w-1/2 h-[40px]"
                   name="instagram"
@@ -212,7 +201,10 @@ const EditProfile = () => {
             </div>
           </div>
 
-          <button onClick={handleclick} className="w-full mt-10 h-[40px] border rounded-[20px] w-80 self-center font-poppins font-normal cursor-pointer text-[20px] text-white">
+          <button
+            onClick={postdata}
+            className="w-full mt-10 h-[40px] border rounded-[20px] w-80 self-center font-poppins font-normal cursor-pointer text-[20px] text-white"
+          >
             Update Profile
           </button>
         </div>
