@@ -12,7 +12,9 @@ const Login = () => {
   const handlesignin = () => {
     auth.signInWithPopup(provider).then((result) => {
       dispatch(setActiveUser(result.user));
-    });
+    }).then(()=>{
+      axois
+    })
   };
 
   const handlesignout = () => {
