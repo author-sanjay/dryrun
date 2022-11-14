@@ -2,9 +2,10 @@ import React, { useState } from "react";
 import GoogleButton from "react-google-button";
 import { useDispatch, useSelector } from "react-redux";
 import { setActiveUser } from "../../store/authSlice";
-import Header from "../Header/Header";
+
 import { auth, provider } from "./firebase";
 import LoginSuccess from "./LoginSuccess";
+import axios from 'axios'
 const Login = () => {
   const dispatch = useDispatch();
   const loggedin = useSelector((state) => state.auth);
@@ -12,8 +13,6 @@ const Login = () => {
   const handlesignin = () => {
     auth.signInWithPopup(provider).then((result) => {
       dispatch(setActiveUser(result.user));
-    }).then(()=>{
-      axois
     })
   };
 

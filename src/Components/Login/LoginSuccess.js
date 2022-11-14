@@ -1,11 +1,36 @@
-import React from "react";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-
+import base_url from "../../api/api";
+import { useDispatch } from "react-redux";
+import { setActiveUser } from "../../store/authSlice";
 const LoginSuccess = () => {
+  const dispatch= useDispatch();
+
   const loggedin = useSelector((state) => state.auth);
+  const [data,setdata]= useState({})
+  useEffect(()=>{
+    console.log(loggedin.user)
+    var temp=new Object();
+    temp["displayname"]=loggedin.user.displayName;
+    temp["email"]=loggedin.user.email;
+    temp["photoURL"]=loggedin.user.photoURL;
+    temp["uid"]=loggedin.user.uid;
+
+    setdata(temp)
+    console.log(data)
+  },[])
+
+
   const addtodb=()=>{
-    loggedin
+    axios.post(`${base_url}/updateuser/${loggedin.user.uid}`,data).then((response)=>{
+      
+      dispatch(setActiveUser(response.data))
+      
+    },(error)=>{
+      console.log(error)
+    })
   }
   return (
     <div className="w-96 px-6 py-4 ">
