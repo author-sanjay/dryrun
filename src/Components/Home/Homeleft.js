@@ -5,8 +5,10 @@ import { useDispatch } from "react-redux";
 import { setUserLogout } from "../../store/authSlice";
 const Homeleft = () => {
   const dispatch=useDispatch();
+  
   const handlesignout=()=>{
     dispatch(setUserLogout());
+    
   }
   return (
     <section
