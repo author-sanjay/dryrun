@@ -3,18 +3,20 @@ import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import base_url from "../../api/api";
 const EditProfile = () => {
+  
   const loggedin = useSelector((state) => state.auth);
   var temp=new Object();
-    temp["displayname"]=loggedin.user.displayName;
+    temp["displayname"]=loggedin.user.displayname;
     temp["email"]=loggedin.user.email;
     temp["photoURL"]=loggedin.user.photoURL;
     temp["uid"]=loggedin.user.uid;
  
 
   const postdata=()=>{
-    axios.post(`${base_url}/updateuser/${loggedin.user.uid}`,temp).then((response)=>{
-      console.log(response.data);
-    })
+    console.log(temp)
+    axios.post(`${base_url}/updateuser/${loggedin.user.uid}`,temp).then(
+      window.location.href="http://localhost:3000/"
+    )
   }
   return (
     <div className="w-full py-12 px-16 flex  flex-col h-full justify-self-center">
@@ -120,8 +122,8 @@ const EditProfile = () => {
                   
                   }}
                   className="mx-5 px-5 bg-white w-1/2 h-[40px]"
-                  name="Company"
-                  placeholder="Company"
+                  name="Degree"
+                  placeholder="Degree"
                 />
               </div>
               <div className="flex px-5 flex-row w-1/2">
