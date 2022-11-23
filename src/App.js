@@ -17,7 +17,7 @@ function App() {
     
   return (
     <Provider store={store}>
-      <PersistGate loading={null} persistor={Persistor}>
+      {/* <PersistGate loading={null} persistor={Persistor}> */}
 
     <BrowserRouter>
       <Routes>
@@ -109,7 +109,7 @@ function App() {
       </Routes>
      
     </BrowserRouter>
-    </PersistGate>
+    {/* </PersistGate> */}
     </Provider>
   );
 }
