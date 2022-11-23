@@ -7,6 +7,8 @@ import CodeEditor from "./Components/CodeEditor/CodeEditor";
 import Login from "./Components/Login/Login";
 import { Provider } from "react-redux";
 import {store} from "./store/store"
+import { Persistor } from "./store/store";
+import { PersistGate } from "redux-persist/integration/react";
 
 import Homewithauth from "./Components/Home/Homewithauth";
 import EditProfile from "./Components/EditProfile/EditProfile";
@@ -15,6 +17,8 @@ function App() {
     
   return (
     <Provider store={store}>
+      <PersistGate loading={null} persistor={Persistor}>
+
     <BrowserRouter>
       <Routes>
         <Route
@@ -105,6 +109,7 @@ function App() {
       </Routes>
      
     </BrowserRouter>
+    </PersistGate>
     </Provider>
   );
 }
