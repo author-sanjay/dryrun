@@ -7,8 +7,10 @@ import "react-dropdown/style.css";
 const CodeEditor = () => {
   const [language, setlanguage] = useState();
   const handlechange = (e) => {
-    console.log(e.target.value);
+    setlanguage(e.target.value);
+    // console.log(e.target.value);
   };
+  console.log(language)
 
   return (
     <div className="flex justify-center items-center">
@@ -97,6 +99,7 @@ const CodeEditor = () => {
                   className="bg-black font-poppins cursor-pointer border rounded-[10px] px-14 font-normal text-[18px]  text-white px-5 "
                   onChange={handlechange}
                 >
+                  <option values="none">Select</option>
                   <option values="js">Javascript</option>
                   <option values="C++">C++</option>
                   <option values="Python">Python</option>
