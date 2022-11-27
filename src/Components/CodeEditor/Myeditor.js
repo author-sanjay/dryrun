@@ -6,7 +6,8 @@ const Myeditor = () => {
     <Editor
     height="75%"
     // language="clang"
-    theme='vs-dark'
+    theme='hc-black'
+  
     defaultLanguage='javascript'
     defaultValue="// some comment"
   />

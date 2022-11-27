@@ -1,8 +1,9 @@
 import React, { useState } from "react";
-import CodeEditor from "../CodeEditor/CodeEditor";
+
 import Myeditor from "../CodeEditor/Myeditor";
 
 const AddQuestions = () => {
+    const [question, setquestion]= useState({})
   const [language, setlanguage] = useState();
 
   const handlechange = (e) => {
