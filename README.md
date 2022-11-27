@@ -18,12 +18,6 @@ To deploy this project run
 ```
 
 
-# Hi, I'm Katherine! 👋
-
-
-## 🚀 About Me
-I'm a full stack developer...
-
 
 # Hi, I'm Sanjay! 👋
 
