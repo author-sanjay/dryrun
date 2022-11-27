@@ -9,6 +9,7 @@ const AddQuestions = () => {
     setlanguage(e.target.value);
     // console.log(e.target.value);
   };
+  console.log(language)
 
   return (
     <div
@@ -141,7 +142,7 @@ const AddQuestions = () => {
 
 
 
-      
+
       <div className="text-white mx-5 w-1/2 flex flex-col">
         <span className="mt-2 mb-2 font-poppins font-normal cursor-pointer text-[25px] text-white">
           Add Your Editorial Code
