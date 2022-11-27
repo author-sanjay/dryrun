@@ -13,6 +13,7 @@ import { PersistGate } from "redux-persist/integration/react";
 import Homewithauth from "./Components/Home/Homewithauth";
 import EditProfile from "./Components/EditProfile/EditProfile";
 import AddQuestions from "./Components/AddQuestions/AddQuestions";
+import AddTestcase from "./Components/AddTestCases/AddTestcase";
 
 function App() {
     
@@ -122,6 +123,27 @@ function App() {
               <div className="px-6 flex justify-center items-center">
                 <div className="max-w-[1480px] w-full">
                   <AddQuestions/>
+                  
+                </div>
+              </div>
+            </div>
+          }
+        />
+      </Routes>
+      <Routes>
+        <Route
+          path="/add-testcase"
+          element={
+            <div className="bg-primary  w-full overflow-hidden" style={{height:"100%"}}>
+              <div className="px-6 flex justify-center items-center">
+                <div className="max-w-[1480px] w-full">
+                  <Header/>
+                  
+                </div>
+              </div>
+              <div className="px-6 flex justify-center items-center">
+                <div className="max-w-[1480px] w-full">
+                  <AddTestcase/>
                   
                 </div>
               </div>

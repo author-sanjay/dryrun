@@ -118,6 +118,16 @@ const AddQuestions = () => {
               </div>
             </div>
           </div>
+          <div className="flex flex-col">
+            <span className="mt-4 font-poppins font-normal cursor-pointer text-[20px] text-white">
+              Explaination
+            </span>
+            <input
+              className="border mt-2 w-full"
+              style={{ minHeight: "10vh", background: "none" }}
+              type={"text"}
+            />
+          </div>
         </div>
       </div>
 
